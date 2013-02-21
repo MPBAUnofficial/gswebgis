@@ -1,0 +1,56 @@
+{% load url from future %}
+{% load sekizai_tags thumbnail %}
+
+<div class="webgis-div" style="padding-bottom:50px;"> 
+    <h2>{{ webgis.title }}</h2> 
+    {% url 'webgis.setup.views.interface' webgis.id as web_url %}
+
+    {% if webgis.image %} 
+        <div class="webgis-image">
+            <a href="{% if request.user.is_authenticated  %}{% firstof web_url '#' %}{% else %}#{%endif%}">
+                <img src="{% thumbnail webgis.image 150x100%}" 
+                     alt="Webgis {{ webgis.titolo }} preview" />
+            </a> 
+        </div>
+    {% endif %} 
+    <p class="webgis-text">
+        {{ webgis.description }} 
+    </p>
+    {% if request.user.is_authenticated %} 
+        <p>
+            <a class="button launch important" 
+               href="{% firstof web_url '#' %}" 
+               title="Accedi" 
+               class="readmore">
+            {{ button_text|upper }}
+            </a>
+        </p> 
+     {% endif %} 
+</div> 
+
+{% addtoblock "css" %}
+<style type="text/css"> 
+
+div.webgis-div {
+    height: auto;
+    padding: 1%;
+    margin-bottom: 50px;
+}
+
+div.webgis-image {
+    max-width: 150px;
+    max-height: 100px;
+    float: left;
+    padding-right: 10.5%;
+    padding-top: 5px;
+}
+
+div.webgis-div p.webgis-text {
+    padding-right:10px;
+}
+</style>
+{% endaddtoblock %}
+
+
+
+

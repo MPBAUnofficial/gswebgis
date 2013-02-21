@@ -1,0 +1,465 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-26 12:23+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: admin.py:12
+#, fuzzy
+msgid "Version"
+msgstr "versione"
+
+#: admin.py:20
+msgid "GetMap options"
+msgstr "Opzioni GetMap"
+
+#: admin.py:21
+msgid "Openlayer options"
+msgstr "Opzioni openlayer"
+
+#: admin.py:27
+msgid "Center map"
+msgstr "Centra mappa"
+
+#: admin.py:34
+msgid "Bounding boxes"
+msgstr "Limite bordi"
+
+#: admin.py:36
+msgid ""
+"Sets the edges to display in the map <br/>Es left=612167, botom=5059545, "
+"right=728567, top=5157345"
+msgstr ""
+"Imposta i bordi da visualizzare nella mappa <br/>Es left=612167, "
+"botom=5059545, right=728567, top=5157345"
+
+#: admin.py:42
+msgid "Webgis configuration"
+msgstr "configurazione base"
+
+#: cms_plugins.py:11
+msgid "Webgis"
+msgstr ""
+
+#: cms_plugins.py:17
+msgid "go to the application"
+msgstr "accedi all'applicazione"
+
+#: models.py:15
+msgid "project name"
+msgstr "nome del proggetto"
+
+#: models.py:17
+msgid "Webgis for analisi by Mpba"
+msgstr "Webgid di Mpba - per l'analisi"
+
+#: models.py:21
+msgid "code name (abbreviation)"
+msgstr "nome in codice (abbreviato)"
+
+#: models.py:26
+msgid "project logo"
+msgstr "logo del proggetto"
+
+#: models.py:33
+msgid "show logo in place of name"
+msgstr "visualizza logo al posto del nome"
+
+#: models.py:38 models.py:80
+msgid "description"
+msgstr "descrizione"
+
+#: models.py:44
+msgid "version"
+msgstr "versione"
+
+#: models.py:53
+msgid "developed by MPBA GROUP - mpba@fbk.eu"
+msgstr "sviluppato dal gruppo MPBA - mpba@fbk.eu"
+
+#: models.py:56
+msgid "copyright year"
+msgstr "anno copyright"
+
+#: models.py:69
+msgid "base configuration"
+msgstr "configurazione base"
+
+#: models.py:70
+msgid "base configurations"
+msgstr "configurazioni base"
+
+#: models.py:75
+msgid "configuration"
+msgstr "configurazione"
+
+#: models.py:76 models.py:349
+msgid "title"
+msgstr "titolo"
+
+#: models.py:81
+msgid "press enter to leave a blank line"
+msgstr "per lasciare una linea vuota andare a capo"
+
+#: models.py:84
+msgid "image"
+msgstr "immagine"
+
+#: models.py:89
+msgid "synchronize maps"
+msgstr "sincronizza mappe"
+
+#: models.py:91
+msgid ""
+"with two or more maps, it establish if it is necessary to synchronize those "
+"maps with the base map (id = 1)"
+msgstr ""
+"in caso di due o piu mappe, indica se si vuole che queste siano "
+"sincronizzatedi default con la mappa base (id=1)"
+
+#: models.py:107
+msgid "location name"
+msgstr "nome location"
+
+#: models.py:113
+msgid "left"
+msgstr "sinistra"
+
+#: models.py:114
+msgid "bottom"
+msgstr "sotto"
+
+#: models.py:115
+msgid "right"
+msgstr "destra"
+
+#: models.py:116
+msgid "top"
+msgstr "sopra"
+
+#: models.py:123 models.py:145
+msgid "max extent"
+msgstr "estensione massima"
+
+#: models.py:124
+msgid "max extents"
+msgstr "estensioni massime"
+
+#: models.py:130
+msgid "Meters"
+msgstr "Metri"
+
+#: models.py:131
+msgid "Degrees"
+msgstr "Gradi"
+
+#: models.py:132
+msgid "Feet"
+msgstr "Piedi"
+
+#: models.py:133
+msgid "Inches"
+msgstr "Pollici"
+
+#: models.py:134
+msgid "Kilometers"
+msgstr "Chilometri"
+
+#: models.py:135
+msgid "Miles"
+msgstr "Miglia"
+
+#: models.py:143
+msgid ""
+"leave it blank if you do not want to limit the area of the map to a given "
+"area"
+msgstr ""
+"lasciare vuoto se non si vuole limitare l'area della mappa ad una certa zona"
+
+#: models.py:150
+msgid "Projection"
+msgstr "proiezione"
+
+#: models.py:151
+msgid ""
+"need to be a valid SRS code ( please see OGC standard). Es: 32632 for WGS "
+"UTM 84 - Zone 32 Nord"
+msgstr ""
+"deve essere un codice SRS valido (vedi OGC standard). Es: 32632 per WGS UTM "
+"84 - Zona 32 Nord"
+
+#: models.py:158
+msgid "units"
+msgstr "unitá"
+
+#: models.py:161
+msgid "select the value that correspond to the specified SRS"
+msgstr "selezionare il valore in corrispondenza al SRS utilizzato"
+
+#: models.py:167
+msgid "max resolution"
+msgstr "risoluzione massima"
+
+#: models.py:170
+msgid ""
+"default is 360deg/256px as level 0 of googlemaps. We suggest to leave it "
+"\"auto\""
+msgstr ""
+"di default corrisponde a 360deg/256px come il livello 0 di googlemaps. Si "
+"consiglia di lasciare \"auto\""
+
+#: models.py:176
+msgid "value of zoom"
+msgstr "valore di zoom"
+
+#: models.py:178
+msgid "usually a value between 10 and 16"
+msgstr "di norma un valore compreso tra 10 e 16"
+
+#: models.py:183
+msgid "zoom"
+msgstr ""
+
+#: models.py:186
+msgid "leave it blank if you do not need to center in a particular area"
+msgstr "lasciare vuoto se non si vuole centrare in una certa zona"
+
+#: models.py:203
+msgid "map"
+msgstr "mappa"
+
+#: models.py:204
+msgid "maps"
+msgstr "mappe"
+
+#: models.py:210
+msgid "PNG image"
+msgstr "Immagine PNG"
+
+#: models.py:211
+msgid "JPEG image"
+msgstr "Immagine JPEG"
+
+#: models.py:218 models.py:364 models.py:413
+msgid "layer name"
+msgstr "nome del layer"
+
+#: models.py:220
+msgid "corresponds to the name of the layer indexed by the geoserver"
+msgstr "corrisponde al nome del layer indicizzato in geoserver"
+
+#: models.py:226
+msgid "layer label"
+msgstr "nome del layer visualizzato"
+
+#: models.py:228
+msgid "corresponds to the name of the layer that is displayed for the user"
+msgstr "corrisponde al nome del layer presentato all'utente"
+
+#: models.py:234
+msgid "layer tip"
+msgstr ""
+
+#: models.py:238
+msgid ""
+"corresponds to the tips that appears when leaving the mouse stopped over the "
+"layer"
+msgstr "corrisponde al tip che compare lasciando il mouse fermo sul layer"
+
+#: models.py:244 models.py:368
+msgid "geoserver workspace"
+msgstr "workspace del geoserver"
+
+#: models.py:248
+msgid "workspace name"
+msgstr "nome de workspace"
+
+#: models.py:251 models.py:379 models.py:428
+msgid "geoserver url"
+msgstr "url del geoserver"
+
+#: models.py:255
+msgid "format"
+msgstr "formato"
+
+#: models.py:259
+msgid "represents the type of image to be requested to the GeoServer"
+msgstr "rappresenta il tipo di immagine da richiedere al geoserver"
+
+#: models.py:265
+msgid "srs"
+msgstr ""
+
+#: models.py:268
+msgid ""
+"indicates whether the map should be request with an EPSG code different from "
+"the one set for the map"
+msgstr ""
+"indica se la mappa deve essere richiesta con un EPSG code differente da "
+"quello impostato per la mappa"
+
+#: models.py:273
+msgid "transparent"
+msgstr "trasparenza"
+
+#: models.py:277
+msgid "styles"
+msgstr "stili"
+
+#: models.py:281
+msgid ""
+"indicates whether the map should be request with a different style from the "
+"one set in geoserver"
+msgstr ""
+"indica se il layer deve essere richiesto con uno stile differente da quello "
+"preimpostato in geoserver"
+
+#: models.py:288 models.py:384
+msgid "buffer"
+msgstr ""
+
+#: models.py:290
+msgid ""
+"indicates the buffer of tiles that need to be request from outside the area "
+"shown in the map. Values > 3 are not recommended"
+msgstr ""
+"indica il buffer di tiles da richiedere esterne all'area visualizzata nella "
+"mappa. Valori > 3 sono sconsigliati'"
+
+#: models.py:297
+msgid "is base layer"
+msgstr "si tratta di un layer di base"
+
+#: models.py:299
+msgid "each map must contain at least one baselayer as background"
+msgstr "Ogni mappa deve contenere almeno un layer di base di sfondo"
+
+#: models.py:303
+msgid "single tile"
+msgstr "singola tile"
+
+#: models.py:307
+msgid "transition effect"
+msgstr "effetto di transizione"
+
+#: models.py:311
+msgid ""
+"set to \"effetc\" to get a transition effect like google maps. Recommended "
+"only on the base layer"
+msgstr ""
+"Impostare su 'effetc' per avere un effetto di transizione simile a google "
+"maps. Consigliato solo sul layer di base"
+
+#: models.py:318
+msgid "display in layer switcher"
+msgstr "visualizza nel selettore dai layer"
+
+#: models.py:320
+msgid ""
+"indicates whether the layer will be visible in the tree of active thematics"
+msgstr "Indica se il layer sarà visibile nell'albero dei tematismi attivi"
+
+#: models.py:326
+msgid "tile size"
+msgstr "dimensione tile"
+
+#: models.py:328
+msgid "indicates the size of single tiles"
+msgstr "Indica la dimensione delle singole tiles"
+
+#: models.py:331
+msgid "visible"
+msgstr "visibile"
+
+#: models.py:332
+msgid "style url"
+msgstr "url dello stile"
+
+#: models.py:342
+msgid "map base layer"
+msgstr "layer di base per mappa"
+
+#: models.py:343
+msgid "map base layers"
+msgstr "layers di base per mappa"
+
+#: models.py:350
+msgid "context"
+msgstr "contesto"
+
+#: models.py:351
+msgid "body"
+msgstr "corpo"
+
+#: models.py:357 models.py:358
+msgid "contextual info"
+msgstr "informazioni contestuali"
+
+#: models.py:372 models.py:421
+msgid ""
+"indicates the name of the workspace in which the layer is present. Leave it "
+"blank if it is not necessary to specify the workspace"
+msgstr ""
+"indica il nome del workspace nel quale é presente il layer. Lasciare nullo "
+"se non é necessario indicare il workspace"
+
+#: models.py:388 models.py:437
+msgid "text"
+msgstr "testo"
+
+#: models.py:390 models.py:439
+msgid "name to display to the user for this layer"
+msgstr "il nome visualizzato all'utente per questo layer"
+
+#: models.py:394 models.py:443
+msgid "style"
+msgstr "stile"
+
+#: models.py:400 models.py:449
+msgid "preview"
+msgstr "anteprima"
+
+#: models.py:406
+msgid "base catalog"
+msgstr "catalogo base"
+
+#: models.py:407
+msgid "base catalogs"
+msgstr "cataloghi base"
+
+#: models.py:455
+msgid "dataW catalog"
+msgstr "catalogo datiW"
+
+#: models.py:456
+msgid "dataW catalogs"
+msgstr "cataloghi datiW"
+
+#: models.py:474
+msgid "locview"
+msgstr ""
+
+#: models.py:475
+msgid "locviews"
+msgstr ""
+
+#: models.py:483
+#, python-format
+msgid "showing %(name)s webgis"
+msgstr "visualizza il webgis \"%(name)s\" "
+
+

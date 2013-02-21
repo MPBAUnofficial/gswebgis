@@ -1,0 +1,2 @@
+ /opt/SenchaSDKTools-2.0.0-beta3/sencha create jsb -a http://localhost:8000/webgis/interface/1 -p app.jsb3
+/opt/SenchaSDKTools-2.0.0-beta3/sencha build -p app.jsb3 -d .

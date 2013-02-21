@@ -1,0 +1,62 @@
+{% load static %}
+{% load url from future %}
+{% load avatar_tags %}
+{% get_static_prefix as STATIC_PREFIX %}
+<html>
+<head>
+    <title>{{ config.long_name }}</title>
+
+    <script src="{{ STATIC_PREFIX }}jquery/jquery-1.7.2.min.js"></script>
+    <script src="//d3nslu0hdya83q.cloudfront.net/dist/1.0.4/raven.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}resources/css/index.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_PREFIX }}extjs/resources/css/ext-all.css">
+
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}proj4js/proj4js-compressed.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}ol/OpenLayers.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}extjs/ext-debug.js"></script>
+
+    <script type="text/javascript" src="{{ STATIC_PREFIX }}app.js"></script>
+
+    {#	<script type="text/javascript" src="{{ STATIC_PREFIX }}jquery/jquery.js"></script>#}
+    {#  <script type="text/javascript" src="{{ STATIC_PREFIX }}jquery/tagcloud.js"></script>#}
+
+    <link href="{{ STATIC_PREFIX }}resources/css/lightbox.css" rel="stylesheet" />
+
+    <!--script type="text/javascript" src="{{ STATIC_PREFIX }}webgis/WebContent/lib/webterrain3d.js"></script-->
+
+    <script type="text/javascript">
+        webgisconfig = {{  maps|safe  }}
+        userdata = {
+            email: "{{ user.email }}",
+            user_id: "{{ user.id }}",
+            avatar: '{% avatar user %}',
+            logout: "{% url "auth_logout" %}"
+        }
+        Raven.config('http://bdaefcfb3f2841e7a23735e08a548614@geomonitor.fbk.eu/3').install();
+        Raven.setUser({
+            email: "{{ user.email }}",
+            id:  "{{ user.id }}"
+        })
+        window.onerror = Raven.process;
+    </script>
+</head>
+<body>
+<div id="bodyloading">
+    <div id="loading">
+        <div class="loading-indicator">
+            <img align="absmiddle" width="54" height="55" style="margin-right: 8px;" alt="Caricamento in corso" src="{{ STATIC_PREFIX }}resources/images/loading.gif" />
+            <span id="textloading">Loading framework...{{ config.short_name }} {{ config.version }}</span>
+        </div>
+    </div>
+</div>
+<table id="logout" style="position: absolute;z-index: 500001; top:5px; right: 5px; height: 55px;">
+    <tr>
+        <td>{% avatar user 40%}</td>
+        <td style="vertical-align:middle;padding-left:5px;text-align:center !important;font-size:14px">{{ user.email }} <br/> <a href="{% url "auth_logout" %}">LOGOUT</a></td>
+    </tr>
+</table>
+</body>
+</html>
