@@ -3,6 +3,7 @@ from multiprocessing.dummy import list
 from django.http import HttpResponse
 from django.core import serializers
 from django.views.decorators.csrf import csrf_exempt
+from webgis.envigrid.models import *
 from webgis.setup.models import *
 #from webgis.envigrid.models import *
 from django.template import RequestContext, loader
@@ -24,13 +25,13 @@ def interface(request,webgis_id):
     catalogobase = CatalogoBase.objects.all()
 
 #    #enviro
-#    ambito_spaziale = AmbitoSpaziale.objects.all()
-#    ambito_climatico = AmbitoClimatico.objects.all()
-#    ambito_temporale = AmbitoTemporale.objects.all()
-#    ambito_variabile = AmbitoVariabile.objects.all()
+    ambito_spaziale = AmbitoSpaziale.objects.all()
+    ambito_climatico = AmbitoClimatico.objects.all()
+    ambito_temporale = AmbitoTemporale.objects.all()
+    ambito_variabile = AmbitoVariabile.objects.all()
 
     results = list(maps) + list([webgis]) + list(webgisinfo) + list(catalogodati) + list(catalogobase) + list([config])
-#    results = results + list(ambito_spaziale) + list(ambito_climatico) + list(ambito_temporale) + list(ambito_variabile)
+    results = results + list(ambito_spaziale) + list(ambito_climatico) + list(ambito_temporale) + list(ambito_variabile)
 
     t = loader.get_template('webgis/webgisinterface.html')
     c = RequestContext(request, {
@@ -49,7 +50,7 @@ def f_search(request):
     return [obj.to_dict() for obj in result]
 
 PROXY_FORMAT = u'%s%%s' % (settings.SKI_WMS_PROXY_DEST)
-PROXY_FORMAT_LOCAL = u'%s%%s' % (settings.SKI_WMS_PROXY_LOCAL)
+PROXY_FORMAT_LOCAL = u'%s%%s' % (settings.SKI_WMS_PROXY_50006)
 PROXY_FORMAT_TOMCAT = u'%s%%s' % (settings.SKI_TOMCAT_PROXY_LOCAL)
 PROXY_FORMAT_APACHE = u'%s%%s' % (settings.SKI_APACHE_PROXY_LOCAL)
 

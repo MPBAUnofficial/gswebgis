@@ -460,8 +460,8 @@ class CatalogoDatiW(models.Model):
 class Locview(models.Model):
 	gid = models.IntegerField(primary_key=True)
 	deno = models.CharField(max_length=80, blank=True)
-	comune = models.CharField(max_length=80, blank=True)
-	codice = models.CharField(max_length=80, blank=True)
+#	comune = models.CharField(max_length=80, blank=True)
+#	codice = models.CharField(max_length=80, blank=True)
 	x = models.FloatField(null=True, blank=True)
 	y = models.FloatField(null=True, blank=True)
 	fuzzy = PgFuzzySearchManager("deno")
