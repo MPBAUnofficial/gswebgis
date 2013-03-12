@@ -31,7 +31,7 @@ def interface(request,webgis_id):
     ambito_variabile = AmbitoVariabile.objects.all()
 
     results = list(maps) + list([webgis]) + list(webgisinfo) + list(catalogodati) + list(catalogobase) + list([config])
-    results = results + list(ambito_spaziale) + list(ambito_climatico) + list(ambito_temporale) + list(ambito_variabile)
+    # results = results + list(ambito_spaziale) + list(ambito_climatico) + list(ambito_temporale) + list(ambito_variabile)
 
     t = loader.get_template('webgis/webgisinterface.html')
     c = RequestContext(request, {
