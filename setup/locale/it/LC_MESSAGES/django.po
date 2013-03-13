@@ -459,7 +459,7 @@ msgstr ""
 
 #: models.py:483
 #, python-format
-msgid "showing %(name)s webgis"
-msgstr "visualizza il webgis \"%(name)s\" "
+msgid "showing %(name)s gswebgis"
+msgstr "visualizza il gswebgis \"%(name)s\" "
 
 

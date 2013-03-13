@@ -1,4 +1,4 @@
-from webgis.envigrid.models import *
+from gswebgis.envigrid.models import *
 from django.http import HttpResponse
 from django.core import serializers
 from statistiche_tgrd import Statistiche as tgrdstat

@@ -1,4 +1,4 @@
-from webgis.envigrid.models import *
+from gswebgis.envigrid.models import *
 from django.contrib import admin
 
 admin.site.register(AmbitoSpaziale,)

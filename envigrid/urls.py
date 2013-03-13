@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, url
 
-urlpatterns = patterns('webgis.envigrid.views',
+urlpatterns = patterns('gswebgis.envigrid.views',
     url(r'^getcatalog$','getcatalog'),
     url(r'^computestat$','computestat'),
     url(r'^ttt','address'),

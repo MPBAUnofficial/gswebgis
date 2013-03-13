@@ -1,4 +1,4 @@
-from webgis.setup.models import *
+from gswebgis.setup.models import *
 from django.contrib import admin
 
 from django.utils.translation import ugettext_lazy as _

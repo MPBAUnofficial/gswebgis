@@ -1,0 +1,11 @@
+# Django 1.4
+django >=1.4.1, <1.5
+
+# CMS itself
+django-cms==2.3.5
+
+# to_json
+git+https://github.com/davidek/django-tojson.git
+
+# httplib2 per proxy pass dev
+httplib2

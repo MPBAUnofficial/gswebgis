@@ -1,7 +1,7 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from models import WebGisPlugin
-from webgis.setup import settings
+from gswebgis.setup import settings
 
 from django.utils.translation import ugettext_lazy as _
 

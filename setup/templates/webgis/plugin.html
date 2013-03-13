@@ -3,7 +3,7 @@
 
 <div class="webgis-div" style="padding-bottom:50px;"> 
     <h2>{{ webgis.title }}</h2> 
-    {% url 'webgis.setup.views.interface' webgis.id as web_url %}
+    {% url 'gswebgis.setup.views.interface' webgis.id as web_url %}
 
     {% if webgis.image %} 
         <div class="webgis-image">

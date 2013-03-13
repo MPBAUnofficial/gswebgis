@@ -1,6 +1,6 @@
 from django.db import models
-from webgis.envigrid.models import *
-from webgis.envigrid.style import *
+from gswebgis.envigrid.models import *
+from gswebgis.envigrid.style import *
 from django.utils.http import urlquote
 
 
