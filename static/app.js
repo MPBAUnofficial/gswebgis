@@ -41,9 +41,9 @@ Ext.application({
 //        'enviro.EnviGrid',
 //        'enviro.EnviClimaDashboard',
         'function.LegendPanelSx',
-        'wps.WpsEngine',
+//        'wps.WpsEngine',
         'function.FuzzySearch',
-        'Solar',
+//        'Solar',
         'starter.Done'
         //'CaInterface'
 
