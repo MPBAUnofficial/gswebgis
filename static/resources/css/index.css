@@ -1,0 +1,659 @@
+#bodyloading {
+	height: 100%;
+	width: 100%;
+	position:absolute;
+	top: 0;
+	z-index: 600001;
+	background-color: #FFFFFF;
+}
+
+#loading  {
+	height:auto;
+	left:45%;
+	padding:2px;
+	position:absolute;
+	top:40%;
+	z-index:600001;
+}
+
+#loading img {
+	margin-bottom:5px;
+}
+
+#loading .loading-indicator {
+	background:none repeat scroll 0 0 white;
+	color:#555555;
+	font:bold 13px tahoma,arial,helvetica;
+	height:auto;
+	margin:0;
+	padding:10px;
+	text-align:center;
+}
+
+#webgiscenter table tr {
+	height: 100%;
+}
+
+.webgisnorth {
+	z-index: 500000;
+    -moz-box-shadow: 0 0 15px 0 #888888;
+    -webkit-box-shadow: 0 0 15px 0 #888888;
+	box-shadow: 0 0 15px 0 #888888;
+	background-color: #FFFFFF;
+}
+#webgiseast {
+    z-index: 5000;
+    -moz-box-shadow: 0 0 15px 0 #888888;
+    -webkit-box-shadow: 0 0 15px 0 #888888;
+    box-shadow: 0 0 15px 0 #888888;
+    background-color: #FFFFFF;
+}
+#webgiswest {
+    z-index: 5000;
+    -moz-box-shadow: 0 0 15px 0 #888888;
+    -webkit-box-shadow: 0 0 15px 0 #888888;
+    box-shadow: 0 0 15px 0 #888888;
+    background-color: #FFFFFF;
+}
+.x-baseinterface-north-body {
+	border-style: solid;
+	border-left-color: #6E6E6E;
+	border-right-color: #6E6E6E;
+	border-bottom-color: #6E6E6E;
+	border-bottom-width: 1.3px;
+	border-left-width: 1.3px;
+	border-right-width: 1.3px;
+	border-top-width: 0px;
+}
+
+div.x-baseinterface-north-title {
+    width: 300px;
+    height: 100%;
+    font-size: 22px !important;
+}
+div.x-baseinterface-north-title img {
+    max-width:150px;
+    width:auto;
+    margin-right: 5px;
+    height:100%;
+    vertical-align:middle;
+    float: left;
+}
+
+.x-border-layout-ct {
+	background-color: #FFFFFF !important;
+}
+
+.x-functionpanel-button .x-btn-inner{
+	font-size: 18px !important;
+	font-variant: small-caps;
+	font-family: tahoma,arial,verdana,sans-serif;
+}
+
+.x-functionpanel-button .x-btn-inner{
+	font-size: 18px !important;
+	font-variant: small-caps;
+	font-family: tahoma,arial,verdana,sans-serif;
+}
+.x-functionpanel-button-over .x-btn-inner{
+	font-weight: bold !important;
+}
+.x-functionpanel-button-pressed .x-btn-inner{
+	font-weight: bold !important;
+}
+.x-information {
+	font-size: 18px !important;
+	font-variant: small-caps;
+	color: #0033CC;
+}
+
+.x-information-body {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.x-information-desc {
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 20px
+}
+
+.x-maplegend {
+	font-size: 14px;
+	color: #000000;
+	font-variant: normal;
+	margin-bottom: 10px;
+}
+.x-maplegend img {
+	margin-left: 15px;
+}
+.x-maplegend-title {
+	font-size: 18px !important;
+	font-variant: small-caps;
+	color: #0033CC;
+}
+
+
+.x-envigrid-north {
+	text-align: center;
+	padding: 10px;
+}
+#webgisnorth .x-container {
+    font-size: 14px;
+}
+.x-envigrid-north table{
+	font-size: 16px !important;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-weight: normal;
+}
+.x-envigrid-north table td{
+	padding: 5px;
+}
+.x-envigridinformation {
+	font-size: 1.6em !important;
+	font-variant: small-caps;
+	color: #0033CC;
+}
+.x-envigridinformation-type {
+	font-size: 100% !important;
+	padding: 5px;
+	background-color: #8CC739;
+	border-style: solid;
+	border-left-color: #989898;
+	border-right-color: #989898;
+	border-bottom-color: #989898;
+	border-top-color: #989898;
+	border-bottom-width: 1.3px;
+	border-left-width: 1.3px;
+	border-right-width: 1.3px;
+	border-top-width: 1.3px;
+	border-radius: 10px;
+	width: 100%;
+}
+.x-envigrid-button{
+    background-image: none !important;
+    border: none !important;
+}
+.x-envigrid-button-disabled {
+    opacity: .5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    background-image: none !important;
+    background-color: transparent !important;
+}
+.x-envigrid-button .x-btn-inner{
+    font-size: 14px !important;
+}
+.x-envigrid-dashboard table td {
+	padding: 5px;
+	table-layout: auto !important;
+	width: auto !important;
+	height: auto !important;
+}
+.x-envigrid-dashboard table {
+	margin-left: auto; 
+	margin-right: auto;
+	width: 90%;
+	height: 90%;
+}
+.x-envigrid-fit-td {
+	width: 100% !important;
+	height: 100% !important;
+	max-width: 100%;
+	max-height: 100%;
+/*
+	background-color: #FFFFFF !important;
+*/
+}
+.x-envigrid-fit-td-itembg {
+	background-color: #FFFFFF !important;
+	width: 100% !important;
+	height: 100% !important;
+/*
+	min-width: 150px;
+	min-height: 150px;
+*/
+}
+.x-envigrid-fit-td-header {
+	width: auto !important;
+	display: block;
+	text-align: center;
+}
+.x-envigrid-fit-rowsname {
+/*
+	width: 40px;
+*/
+	height: 100% !important;
+	display: block;
+	text-align: center;
+}
+.x-envigrid-fit-td-headerelement {
+	font-size: 1.3em !important;
+	font-variant: small-caps !important;
+}
+.x-envigrid-fit-td-headerelement-rotate {
+    font-size: 1.3em !important;
+    font-variant: small-caps !important;
+
+    display: inline;
+    /*-webkit-transform: rotate(-90deg);*/
+    /*-moz-transform: rotate(-90deg);*/
+    /*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+}
+.x-envigrid-item-cloud {
+	margin: 5px;
+}
+.x-envigrid-item-cloud a {
+	display: inline !important;
+	float: left;
+	padding: 2px;
+}
+.x-envigrid-item-btn {
+	display: block !important;
+	float: right !important;
+	margin: 5px;
+}
+.x-envigrid-item-btn p{
+	padding: 5px;
+}
+
+.x-envigrid-backward {
+    background-image: url("../images/icons/backward.png") !important;
+}
+.x-envigrid-forward {
+    background-image: url("../images/icons/forward.png") !important;
+}
+.x-envigrid-play {
+    background-image: url("../images/icons/play.png") !important;
+}
+.x-envigrid-stop {
+    background-image: url("../images/icons/stop.png") !important;
+}
+.x-envigrid-settings {
+    background-image: url("../images/icons/settings.png") !important;
+}
+
+.x-catalogpanel {
+	position: absolute !important;
+	top: 60 !important;
+	right: 0 !important;
+	left: auto !important;
+	bottom: auto !important;
+	margin: 10px;
+}
+.x-catalogpanel .x-btn {
+	margin-bottom: 10px;
+	z-index: 2000 !important;
+}
+.x-catalogpanel .x-btn-inner {
+	font-size: 0.9em !important;
+}
+
+.x-catalogpanel-base {
+    background-image: url("../images/icons/catalogobase.png") !important;
+}
+.x-catalogpanel-data {
+    background-image: url("../images/icons/catalogodata.png") !important;
+}
+.x-catalogpanel-variable {
+    background-image: url("../images/icons/catalogovariable.png") !important;
+}
+.x-catalogpanel-model {
+    background-image: url("../images/icons/catalogomodel.png") !important;
+}
+
+.x-timeslider {
+	position: relative !important;
+	top: auto !important;
+	right: auto !important;
+	left: 0 !important;
+	bottom: 150 !important;
+	margin: 10px;
+	z-index: 2000 !important;
+}
+
+.item {
+	float: left;
+	padding: 8px;
+	margin: 8px; 
+	width: 140px;
+	height: 140px;
+}
+.item div {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+    white-space: normal !important;
+}
+.item:hover {
+/*
+	background-color: #DFE9F6;
+*/
+	border: 1px solid #DFE9F6!important;
+	border-radius: 10px;
+/*
+	border-bottom-right-radius: 10px;
+*/
+	box-shadow: inset 0 0 10px #DFE9F6;
+}
+.item h3 {
+	font-size: 1.1em !important;
+	text-align: center;
+	padding-top: 5px;
+	font-weight: normal;
+	white-space: normal;
+}
+.item img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#timeslidertitle {
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+	font-size: 1.1em !important;
+}
+#timesliderinfo div{
+	font-size: 1.2em !important;
+	font-weight: bold !important;
+}
+
+.pippaao {
+    margin-left: 100px !important;
+}
+
+
+.x-toolbar-pan {
+    background-image: url("../images/icons/pan25.png") !important;
+}
+.x-toolbar-zoomin {
+    background-image: url("../images/icons/zoomin25.png") !important;
+
+}
+.x-toolbar-zoommax {
+    background-image: url("../images/icons/zoommax25.png") !important;
+}
+.x-toolbar-zoomout {
+    background-image: url("../images/icons/zoomout25.png") !important;
+
+}
+.x-toolbar-navprevious {
+    background-image: url("../images/icons/navprevious25.png") !important;
+
+}
+.x-toolbar-navnext {
+    background-image: url("../images/icons/navnext25.png") !important;
+
+}
+.x-toolbar-getmouseposition {
+    background-image: url("../images/icons/getmouseposition25.png") !important;
+
+}
+.x-toolbar-getlocation {
+    background-image: url("../images/icons/getlocation25.png") !important;
+
+}
+.x-button-maptoolbar {
+    width: 32px !important;
+    height: 32px  !important;
+    background-image: none !important;
+    /*border: none !important;*/
+    /*border: 1px solid #097CFC !important;*/
+    border: 1px solid black !important;
+}
+.x-btn-pressed button .x-btn-icon {
+    filter: invert();
+    -webkit-filter: invert();
+}
+.x-button-maptoolbar .x-btn-icon {
+    width: 100% !important;
+    height: 100% !important;
+}
+.olControlMousePosition{
+    font-family: Museo500, tahoma, arial, verdana, sans-serif !important;
+    bottom: 15px !important;
+    right: 10px !important;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF,direction=135,strength=2);
+    filter:
+        progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF,direction=135,strength=2);
+        progid:DXImageTransform.Microsoft.Shadow(color=#FFFFFF,direction=315,strength=2);
+}
+
+.x-info-panel {
+    font-size: 14px;
+    padding: 8px 35px 8px 14px !important;
+    margin-bottom: 20px !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid #bce8f1 !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px  !important;
+    background-color: #d9edf7 !important;
+    color: #3a87ad !important;
+}
+
+
+.wps-header h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+.wps-status-icon-accepted{
+    background-image: url("../images/accepted.png") !important;
+    width: 29px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.wps-status-icon-started{
+    background-image: url("../images/started.png") !important;
+    width: 27px;
+    height: 27px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wps-status-icon-succeeded {
+    background-image: url("../images/succeeded.png") !important;
+    width: 25px;
+    height: 19px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+ }
+.wps-status-icon-failed{
+    background-image: url("../images/failed.png") !important;
+    width: 29px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wps-status-icon-noup {
+    background-image: url("../images/noup.png") !important;
+    width: 22px;
+    height: 7px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.wps-status-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.wps-status-grid-cell .x-grid-cell-inner {
+    padding: 0px !important;
+}
+
+.x-grid-rowbody .wps-identifier {
+    padding-left: 6px !important;
+    padding-bottom: 6px;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+.x-grid-rowbody .wps-list {
+    padding-left: 6px !important;
+    padding-bottom: 6px;
+}
+.x-grid-rowbody .wps-list ul {
+    list-style-type: circle !important;
+
+}
+.x-grid-rowbody .wps-list ul li{
+    list-style: inside !important;
+
+}
+
+.x-container .x-mask-msg {
+    /*position: inherit !important;*/
+    border: none;
+    border-color: transparent;
+    background: transparent;
+}
+
+.x-container .x-mask-msg div {
+    border: none;
+    background-color: transparent;
+    width: 150px;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+.x-toolbar .x-toolbar-text{
+    color: #000000 !important;
+}
+
+.x-fuzzy-search {
+    z-index: 500001 !important;
+}
+.x-fuzzy-search-root .x-form-text{
+    height: 35px !important;
+}
+.x-fuzzy-search-trigger {
+    padding: 5px;
+    background-color: #2B92F4;
+    border-style: solid;
+    border-left-color: #989898;
+    border-right-color: #989898;
+    border-bottom-color: #989898;
+    border-top-color: #989898;
+    border-bottom-width: 1.3px;
+    border-left-width: 1.3px;
+    border-right-width: 1.3px;
+    border-top-width: 1.3px;
+    border-radius: 5px;
+    width: 45px;
+    height: 35px;
+    background-image: url("../images/search.png") !important;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.x-base-button{
+    background-image: none !important;
+    border: none !important;
+    width: 95% !important;
+}
+.x-base-button-disabled {
+    opacity: .5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    background-image: none !important;
+    background-color: transparent !important;
+}
+.x-base-button .x-btn-inner{
+    font-size: 14px !important;
+}
+.x-base-return-button {
+    background-image: none !important;
+    border: none !important;
+    margin-top: 5px !important;
+}
+.x-base-apply-button {
+    background-image: none !important;
+    border: none !important;
+    margin-bottom: 15px !important;
+    width: 95% !important;
+}
+.x-btn-default-medium-disabled {
+    background: white !important;
+    opacity: .5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+.gx-legend-item{
+    margin-top: 5px;
+    font-size: 14px;
+}
+.x-tree-panel .x-grid-cell-inner img {
+    width: 15px !important;
+}
+
+.x-tree-panel .x-grid-cell-inner .x-item-disabled{
+    display: none !important;
+}
+
+.x-style-admin .x-grid-cell-inner img {
+    width: 15px !important;
+}
+.x-style-admin .x-grid-cell-inner .x-item-disabled{
+    display: none !important;
+}
+
+.x-geotree-metadata .x-window-body .x-geotree-metadata-body{
+    margin: 5px;
+}
+.x-geotree-metadata-body hr{
+    color: black !important;
+    background-color: black !important;
+    height: 1px !important;
+    border:0 !important;
+}
+.x-geotree-metadata .x-window-body {
+    background: white !important;
+}
+.x-geotree-metadata h2 {
+    font-weight: bold;
+    font-size: 18px;
+}
+.x-geotree-metadata h3 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+.x-geotree-metadata ul li {
+    margin-left: 10px;
+}
+.x-geotree-metadata .x-window-body .x-geotree-metadata-body .x-geotree-description {
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.x-wfs-metadata .x-window-body .x-geotree-metadata-body{
+    margin: 5px;
+}
+.x-wfs-metadata .x-window-body {
+    background: white !important;
+}
+.x-wfs-metadata-body hr{
+    color: black !important;
+    background-color: black !important;
+    height: 1px !important;
+    border:0 !important;
+}
+
+.x-wfs-metadata h2 {
+    font-weight: bold;
+    font-size: 18px;
+}
+.x-wfs-metadata h3 {
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+.x-wfs-metadata ul li {
+    margin-left: 10px;
+}
+.x-wfs-metadata .x-window-body .x-geotree-metadata-body .x-geotree-description {
+    font-style: italic;
+    margin-bottom: 5px;
+}
