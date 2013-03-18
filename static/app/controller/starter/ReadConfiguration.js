@@ -112,24 +112,11 @@ Ext.define('Webgis.controller.starter.ReadConfiguration', {
 		});
 
 //        Webgis.config.westpanel.push({
-//                classe: 'GeoExt.panel.Legend',
-//                name_btn: 'Legend',
+//                classe: 'Webgis.view.LayerSwitcherPanel',
+//                name_btn: 'Switch',
 //                options_btn:{pressed: false},
-//                options_obj: {
-//                    border: false,
-//                    defaults: {
-//                        labelCls: 'gx-legend-item',
-//                        style: 'padding:5px'
-//                    },
-//                    autoScroll: true
-//                }
+//                options_obj: {alfa: true}
 //        });
-        Webgis.config.westpanel.push({
-                classe: 'Webgis.view.LayerSwitcherPanel',
-                name_btn: 'Switch',
-                options_btn:{pressed: false},
-                options_obj: {alfa: true}
-        });
 
 
         //TODO: le informazioni del pybab non dovrebbero essere messe qui!

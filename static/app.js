@@ -35,14 +35,15 @@ Ext.application({
 	    'starter.SetMap',
 	    'Interface',
 	    'Westpanel',
-//        'Eastpanel', //TODO: setVisibile del panel dal controller invece che in BaseInterface
-	    'Catalog',
+        'Eastpanel', //TODO: setVisibile del panel dal controller invece che in BaseInterface
+//	    'Catalog',
         'MapToolbar',
 //        'enviro.EnviGrid',
 //        'enviro.EnviClimaDashboard',
-        'function.LegendPanelSx',
+//        'function.LegendPanelSx',
 //        'wps.WpsEngine',
         'function.FuzzySearch',
+        'function.LegendPanelAlwaysVisible',
 //        'Solar',
         'starter.Done'
         //'CaInterface'

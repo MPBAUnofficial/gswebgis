@@ -60,16 +60,6 @@ Ext.define('Webgis.controller.starter.SetMap', {
                     { tileSize: new OpenLayers.Size(256, 256), displayInLayerSwitcher: layer.fields.display_in_layer_switcher}
                 );
 
-//                var l = new OpenLayers.Layer.TMS(
-//                    "My Layer", // name for display in LayerSwitcher   service/tms/1.0.0/solarwebgis_iniziale@BBOX+PAT@png
-//                    "http://geodata.fbk.eu:50006/geoserver/gwc/service/tms/1.0.0/solarwebgis_iniziale@BBOX+PAT@png", // service endpoint
-//                    {
-//                        layername: larray.join(','),
-//                        type: "png",
-//                        displayInLayerSwitcher: layer.fields.display_in_layer_switcher
-//                    } // required properties
-//                );
-
 				//Aggiungo l'oggetto layer alla corrispettiva mappa
 				map.addLayer(l);
 			}

@@ -30,7 +30,10 @@ Ext.define('Webgis.view.BaseInterface',{
                 collapsible: true,
                 collapseMode: 'mini',
                 split: true,
-                layout: 'card',
+                layout: {
+                    type: 'vbox',
+                    align: 'stretch'
+                },
                 cls: 'x-baseinterface-east-body',
                 hideCollapseTool: true,
                 autoScroll:false,
@@ -41,7 +44,14 @@ Ext.define('Webgis.view.BaseInterface',{
                 style: 'background-color: #FFFFFF',
                 padding: '8 8 8 8',
                 animCollapse: false,
-                width: 280
+                width: 280,
+                items: [{
+                    id: 'webgiseastpanelbtn',
+                    xtype: 'container',
+                    flex: 1,
+                    border: false,
+                    layout: 'card'
+                }]
             },{
 				height: 60,
                 xtype: 'container',

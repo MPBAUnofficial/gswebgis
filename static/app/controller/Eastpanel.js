@@ -17,7 +17,7 @@ Ext.define('Webgis.controller.Eastpanel', {
 
     refs: [{
         ref: "webgiseastpanel",
-        selector: "#webgiseast"
+        selector: "#webgiseastpanelbtn"
     },{
         ref: 'fnpanel',
         selector: 'functionbtnpanel'
@@ -126,80 +126,99 @@ Ext.define('Webgis.controller.Eastpanel', {
          *
          */
 //        var body = Ext.create('Webgis.view.function.MapLegend');
-        var body = Ext.create('GeoExt.panel.Legend',{
-            title: 'Legenda',
-            header: {
+//        var body = Ext.create('GeoExt.panel.Legend',{
+//            title: 'Legenda',
+//            header: {
+//                xtype: 'container',
+//                html: 'Legenda',
+//                border: false,
+//                baseCls: 'x-maplegend-title'
+//            },
+//            defaults: {
+//                labelCls: 'gx-legend-item',
+//                style: 'padding:5px'
+//            },
+//            border: false,
+//            autoScroll: true
+//        });
+//        this.addCardBtn(Ext.id(),'Legenda','',body);
+        var body1 = Ext.create('Webgis.view.function.LayerSwitcher',{
+            map: Webgis.maps[0],
+            dockedItems: [{
                 xtype: 'container',
-                html: 'Legenda',
+                dock: 'top',
+                html: 'Layer attivi',
                 border: false,
                 baseCls: 'x-maplegend-title'
-            },
-            defaults: {
-                labelCls: 'gx-legend-item',
-                style: 'padding:5px'
-            },
-            border: false,
-            autoScroll: true
+            }]
         });
-        this.addCardBtn(Ext.id(),'Legenda','',body);
-        var body1 = Ext.create('Webgis.view.LayerSwitcherPanel');
         this.addCardBtn(Ext.id(),'Layer attivi','',body1);
 
-        this.addToggleBtn('Ext.container.Container');
+//        this.addToggleBtn('Ext.container.Container');
 
         /* * * * * * * * * * * *
          * GeoDocs Area
          *
          */
-        this.addToggleBtn('Webgis.view.BaseButton',{
-            text: "Segnalazioni",
-            id: 'btn-fn-segnalazioni',
-            enableToggle: true
-        });
-        var body2 = Ext.create('Webgis.view.function.GeoDocs');
-        this.addCardBtn(Ext.id(),'Aggiungi <br/>segnalazione','',body2);
-        var body3 = Ext.create('Webgis.view.function.GeoDocsFilter');
-        var btn3 = this.addCardBtn('btn-fn-filtro','Filtra <br/>segnalazioni','',body3);
-        btn3.setDisabled(true);
-        this.addToggleBtn('Webgis.view.BaseButton',{
-            text: "Rimuovi filtro",
-            id: 'btn-fn-rmfiltro',
-            enableToggle: false,
-            disabled: true
-        });
+//        this.addToggleBtn('Webgis.view.BaseButton',{
+//            text: "Segnalazioni",
+//            id: 'btn-fn-segnalazioni',
+//            enableToggle: true
+//        });
+//        var body2 = Ext.create('Webgis.view.function.GeoDocs');
+//        this.addCardBtn(Ext.id(),'Aggiungi <br/>segnalazione','',body2);
+//        var body3 = Ext.create('Webgis.view.function.GeoDocsFilter');
+//        var btn3 = this.addCardBtn('btn-fn-filtro','Filtra <br/>segnalazioni','',body3);
+//        btn3.setDisabled(true);
+//        this.addToggleBtn('Webgis.view.BaseButton',{
+//            text: "Rimuovi filtro",
+//            id: 'btn-fn-rmfiltro',
+//            enableToggle: false,
+//            disabled: true
+//        });
 
         /* * * * * * * * * * * *
          * ShpUploader Area
          *
          */
-        var shpStyle =  this.getFunctionShpStyleStore()
-        shpStyle.load(0);
-        var body4 = Ext.create('Webgis.view.function.StyleAdmin',{
-            store: shpStyle
-        });
-        this.addCardBtn(Ext.id(),'Gestione <br/>stili','',body4);
-        var body5 = Ext.create('Webgis.view.function.StyleUploader',{
-            store: shpStyle
-        });
-        this.addCardBtn(Ext.id(),'Aggiungi <br/>stile','',body5);
-        var body41 = Ext.create('Webgis.view.function.ShpUploader',{
-            store: shpStyle
-        });
-        this.addCardBtn(Ext.id(),'Aggiungi <br/>SHP','',body41);
+//        var shpStyle =  this.getFunctionShpStyleStore()
+//        shpStyle.load(0);
+//        var body4 = Ext.create('Webgis.view.function.StyleAdmin',{
+//            store: shpStyle
+//        });
+//        this.addCardBtn(Ext.id(),'Gestione <br/>stili','',body4);
+//        var body5 = Ext.create('Webgis.view.function.StyleUploader',{
+//            store: shpStyle
+//        });
+//        this.addCardBtn(Ext.id(),'Aggiungi <br/>stile','',body5);
+//        var body41 = Ext.create('Webgis.view.function.ShpUploader',{
+//            store: shpStyle
+//        });
+//        this.addCardBtn(Ext.id(),'Aggiungi <br/>SHP','',body41);
         /* * * * * * * * * * * *
          * WMS request
          *
          */
-        var body6 = Ext.create('Webgis.view.function.WmsCapabilities',{
-            store: this.getFunctionWmsCapabilitiesStore()
-        });
-        this.addCardBtn(Ext.id(),'Aggiungi <br/>WMS','',body6);
+//        var body6 = Ext.create('Webgis.view.function.WmsCapabilities',{
+//            store: this.getFunctionWmsCapabilitiesStore()
+//        });
+//        this.addCardBtn(Ext.id(),'Aggiungi <br/>WMS','',body6);
 
-        var body7 = Ext.create('Webgis.view.wps.PrintMap');
-        this.addCardBtn(Ext.id(),'Stampa<br/>mappa','',body7);
+//        var body7 = Ext.create('Webgis.view.wps.PrintMap');
+//        this.addCardBtn(Ext.id(),'Stampa<br/>mappa','',body7);
+//
+//        var body8 = Ext.create('Webgis.view.wps.BufferAndIntersect');
+//        this.addCardBtn(Ext.id(),'Modello <br/>buffer','',body8);
 
-        var body8 = Ext.create('Webgis.view.wps.BufferAndIntersect');
-        this.addCardBtn(Ext.id(),'Modello <br/>buffer','',body8);
+        var body9 = Ext.create('Webgis.view.catlas.PlrTassiStd');
+        this.addCardBtn(Ext.id(),'Tassi <br/>standard','',body9);
+
+        var body9 = Ext.create('Webgis.view.catlas.PlrTassiGrezzi');
+        this.addCardBtn(Ext.id(),'Tassi <br/>grezzi','',body9);
+
+        var body10 = Ext.create('Webgis.view.catlas.PlrPercentuale');
+        this.addCardBtn(Ext.id(),'Tassi <br/>percentuali','',body10);
+
     },
     addToggleBtn: function(btn,opt){
         this.getFnpanel().add(Ext.create(btn,opt));
@@ -222,7 +241,7 @@ Ext.define('Webgis.controller.Eastpanel', {
             iscard: true,
             componentCls: 'x-base-return-button',
             card_id: 0,
-            text: 'Chiudi'
+            text: 'Chiudi ' + text
         },0);
 
 
