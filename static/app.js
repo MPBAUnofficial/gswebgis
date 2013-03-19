@@ -45,6 +45,7 @@ Ext.application({
         'function.FuzzySearch',
         'function.LegendPanelAlwaysVisible',
 //        'Solar',
+        'catlas.GtCatalogIndicators',
         'starter.Done'
         //'CaInterface'
 

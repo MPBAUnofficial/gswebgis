@@ -120,21 +120,21 @@ Ext.define('Webgis.controller.starter.ReadConfiguration', {
 
 
         //TODO: le informazioni del pybab non dovrebbero essere messe qui!
-//       var md =  Ext.create('Webgis.model.GeotreeCatalogLayer');
-//       Ext.data.NodeInterface.decorate(md);
-//       var st = Ext.create('Webgis.store.GeotreeCatalogLayer',{
-//           model: 'Webgis.model.GeotreeCatalogLayer'
-//       });
-//
-//       Webgis.config.westpanel.push({
-//           classe: 'Webgis.view.function.TreePanelLayer',
-//           name_btn: 'Mappe',
-//           options_btn:{pressed: false},
-//           options_obj: {
-//               alfa: true,
-//               store: st
-//           }
-//       });
+       var md =  Ext.create('Webgis.model.GeotreeCatalogLayer');
+       Ext.data.NodeInterface.decorate(md);
+       var st = Ext.create('Webgis.store.GeotreeCatalogLayer',{
+           model: 'Webgis.model.GeotreeCatalogLayer'
+       });
+
+       Webgis.config.westpanel.push({
+           classe: 'Webgis.view.function.TreePanelLayer',
+           name_btn: 'Mappe',
+           options_btn:{pressed: false},
+           options_obj: {
+               alfa: true,
+               store: st
+           }
+       });
 
 //       var md1 =  Ext.create('Webgis.model.GeotreeCatalogStatistical');
 //       Ext.data.NodeInterface.decorate(md1);
