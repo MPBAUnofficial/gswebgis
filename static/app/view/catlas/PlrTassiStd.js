@@ -221,7 +221,7 @@ Ext.define('Webgis.view.catlas.PlrTassiStd', {
         {
             xtype: 'container',
             dock: 'top',
-            html: 'Tassi standard incidenza',
+            html: 'Tassi grezzi standardizzati',
             border: false,
             baseCls: 'x-maplegend-title'
         }

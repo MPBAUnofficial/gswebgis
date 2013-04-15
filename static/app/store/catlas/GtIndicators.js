@@ -12,31 +12,19 @@ Ext.define('Webgis.store.catlas.GtIndicators', {
 
     autoLoad: true,
 
-//    proxy: {
-//        type: 'ajax',
-//        url: '/api/layer/',
-//        reader: {
-//            type: 'json',
-//        }
-//    },
-
     proxy: {
-        type: 'memory',
+        type: 'ajax',
+        url: '/api/indicator/',
         reader: {
-            type: 'json'
+            type: 'json',
+            root: 'data'
         }
     },
 
     sorters: [
         {
-            property : 'label',
+            property : 'name',
             direction: 'ASC'
         }
-    ],
-
-    data: [
-        {"id": 1, "label": "Tasso grezzo"},
-        {"id": 2, "label": "Tasso grezzo std"},
-        {"id": 8, "label": "Incidenza"}
     ]
 });

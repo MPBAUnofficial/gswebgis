@@ -9,6 +9,7 @@ Ext.define('Webgis.model.catlas.GtIndicators', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'int'},
-        {name: 'label',type: 'string'}
+        {name: 'name',type: 'string'},
+        {name: 'widgets', type: Ext.data.Types.JSON}
     ]
 });

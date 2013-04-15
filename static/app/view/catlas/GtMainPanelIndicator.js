@@ -9,42 +9,63 @@ Ext.define('Webgis.view.catlas.GtMainPanelIndicator', {
     extend: 'Ext.container.Container',
     alias : 'widget.gtmainpanelindicator',
 
-    layout: {
-        type: 'vbox',
-        align: 'stretch'
-    },
     border: false,
     style: 'background-color: #FFFFFF',
+
+
+//    id: 'gtmainpanelaccordion',
+
+    layout: {
+        type: 'accordion',
+        titleCollapse: false,
+        animate: true,
+        activeOnTop: true
+    },
+
+    defaults: {
+        margin: '0 0 10 0'
+    },
+
 
     initComponent: function() {
         //Template per visualizzare le informazioni introduttive
 
         this.items = [
-            {
-            xtype: 'container',
-            flex: 2,
-            id: 'gtmainpanelaccordion',
-
-            layout: {
-                type: 'accordion',
-                titleCollapse: false,
-                animate: true,
-                activeOnTop: true
-            },
-            items: [
-//                {
-//                    xtype: 'gtwhereclauseindicator',
-//                    autoScroll: true
-//                },
                 {
-                    xtype: 'gttreepanelindicator',
-                    store: this.store
+//                    dockedItems: [{
+//                        xtype: 'container',
+//                        dock: 'top',
+//                        html: 'Configura indicatore',
+//                        border: false,
+//                        baseCls: 'x-maplegend-title'
+//                    }],
+                    title: 'Configura indicatore',
+                    layout: 'card',
+                    border: false,
+                    cls: 'gt-main-panel',
+                    frame: true,
+                    id: 'gtsubpanelindicator',
+                    style: 'background-color: #FFFFFF;',
+                    bodyStyle: 'background-color: #FFFFFF;border-top-width: 0px;',
+                    items: [{
+                        xtype: 'gttreepanelindicator',
+                        store: this.store
+                    }]
                 },
+//                {
+//                    title: 'Mappe in sessione',
+//                    layout:
+//                    items: [{
+//                        xtype: 'gttreepanelindicator',
+//                        controllerScope: this.controllerScope
+//                    }]
+//                }
                 {
-                    title: 'mappe in sessione'
+                    xtype: 'gtcachepanelindicator',
+                    store: this.cacheStore,
+                    controllerScope: this.controllerScope
                 }
             ]
-        }]
 
         this.callParent(arguments);
     }

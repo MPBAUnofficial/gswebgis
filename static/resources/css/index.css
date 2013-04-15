@@ -657,3 +657,10 @@ div.x-baseinterface-north-title img {
     font-style: italic;
     margin-bottom: 5px;
 }
+
+.gt-main-panel .x-panel-header-text {
+    font-size: 18px !important;
+    font-variant: small-caps;
+    color: #0033CC !important;
+}
+

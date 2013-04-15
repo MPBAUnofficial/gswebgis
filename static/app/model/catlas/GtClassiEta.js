@@ -9,6 +9,6 @@ Ext.define('Webgis.model.catlas.GtClassiEta', {
     extend: 'Ext.data.Model',
     fields: [
         {name: 'id', type: 'int'},
-        {name: 'label',type: 'string'}
+        {name: 'name',type: 'string'}
     ]
 });

@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 Ext.define('Webgis.view.catlas.GtTreePanelIndicator', {
-    extend: 'Ext.panel.Panel',
+    extend: 'Ext.container.Container',
     alias : 'widget.gttreepanelindicator',
 
     layout: {
@@ -21,41 +21,31 @@ Ext.define('Webgis.view.catlas.GtTreePanelIndicator', {
         //Template per visualizzare le informazioni introduttive
 
         this.items = [
-//            {
-//            xtype: 'container',
-//            id: 'pippo',
-//            border: true,
-//            flex: 1,
-//            html: 'Futura area selezione indicatore'
-//        },
             {
                 xtype: 'grid',
-                margin: '10 0 10 0',
+                margin: '5 0 5 0',
+                border: false,
                 hideHeaders: true,
+
                 columns: [
-                    { text: 'Label',  dataIndex: 'label', flex: 1 },
+                    { text: 'Nome',  dataIndex: 'name', flex: 1 },
                     {
                         xtype:'actioncolumn',
-                        width:50,
+                        width:30,
                         items: [{
-//                            icon: 'extjs/examples/shared/icons/fam/cog_edit.png',  // Use a URL in the icon config
-                            text: "Settings",
-                            tooltip: 'Settings',
-                            handler: function(grid, rowIndex, colIndex) {
-                                var rec = grid.getStore().getAt(rowIndex);
-
-                            }
+                            icon: '/static/resources/images/asterisk.png',  // Use a URL in the icon config
+                            tooltip: 'Configura le variabili'
                         }]
                     }
                 ],
                 store: this.store,
                 flex: 2,
-                columnLines: true
+                columnLines: false
             },{
             xtype: 'container',
             border: false,
             flex: 1,
-            html: 'Bla bla bla <br/> Facciamo un po di esempi di utilizzo fighi...'
+            html: 'Puoi ad esempio guardare il tasso grezzo std per una o piu\' variabili.'
         }]
 
         this.callParent(arguments);

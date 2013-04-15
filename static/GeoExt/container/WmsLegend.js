@@ -125,6 +125,9 @@ var legendPanel = new GeoExt.LegendPanel({
                 url = styles[0].legend && styles[0].legend.href;
             }
         }
+        if(layer.legendURL){
+            url = layer.legendURL;
+        }
         if(!url) {
             url = layer.getFullRequestString({
                 REQUEST: "GetLegendGraphic",

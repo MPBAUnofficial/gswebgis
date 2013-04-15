@@ -211,14 +211,16 @@ Ext.define('Webgis.controller.Eastpanel', {
 //        this.addCardBtn(Ext.id(),'Modello <br/>buffer','',body8);
 
         var body9 = Ext.create('Webgis.view.catlas.PlrTassiStd');
-        this.addCardBtn(Ext.id(),'Tassi <br/>standard','',body9);
+        this.addCardBtn(Ext.id(),'Tasso grezzo<br/>standard','',body9);
 
         var body9 = Ext.create('Webgis.view.catlas.PlrTassiGrezzi');
-        this.addCardBtn(Ext.id(),'Tassi <br/>grezzi','',body9);
+        this.addCardBtn(Ext.id(),'Tasso <br/>grezzo','',body9);
 
         var body10 = Ext.create('Webgis.view.catlas.PlrPercentuale');
-        this.addCardBtn(Ext.id(),'Tassi <br/>percentuali','',body10);
+        this.addCardBtn(Ext.id(),'Distribuzione <br/>percentuale','',body10);
 
+        var body11 = Ext.create('Webgis.view.catlas.PlrComunale');
+        this.addCardBtn(Ext.id(),'Tasso grezzo<br/>comunale','',body11);
     },
     addToggleBtn: function(btn,opt){
         this.getFnpanel().add(Ext.create(btn,opt));

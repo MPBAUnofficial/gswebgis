@@ -46,34 +46,34 @@ Ext.define('Webgis.view.LayerSwitcherPanel', {
 				flex: 1,
 //				margin: '0 0 5 0',
 				map: this.maps[idx]
-//				viewConfig: {
-//					plugins: {
-//						ptype: 'gridviewdragdrop',
-//						dragGroup: 'GridDDGroup'+a,
-//						dropGroup: 'GridDDGroup'+b
-//					},
-//					listeners: {
-//						drop: function(element, dataObj, overModel, dropPosition) {
-//							var map = Webgis.maps[0]
-//
-//							var lDroped = map.getLayersBy('id',dataObj.records[0].getId())[0]
-//							var lOver = map.getLayersBy('id',overModel.getId())[0]
-//
-//							var lDropedIdx = map.getLayerIndex(lDroped);
-//							var lOverIdx = map.getLayerIndex(lOver);
-//							if (dropPosition == 'after'){
-//								var newIdx = lOverIdx;
-//							} else {
-//								var newIdx = lOverIdx;
-//							}
-//							var nuovoIdx = lDropedIdx - lOver
-//							//~ console.log(map.getLayerIndex(lDroped)+" vs "+map.getLayerIndex(lOver)+" nuovoidx "+newIdx)
-//
-//							map.setLayerIndex(lDroped,newIdx)
-//
-//						}
-//					}
-//				}
+				viewConfig: {
+					plugins: {
+						ptype: 'gridviewdragdrop',
+						dragGroup: 'GridDDGroup'+a,
+						dropGroup: 'GridDDGroup'+b
+					},
+					listeners: {
+						drop: function(element, dataObj, overModel, dropPosition) {
+							var map = Webgis.maps[0]
+
+							var lDroped = map.getLayersBy('id',dataObj.records[0].getId())[0]
+							var lOver = map.getLayersBy('id',overModel.getId())[0]
+
+							var lDropedIdx = map.getLayerIndex(lDroped);
+							var lOverIdx = map.getLayerIndex(lOver);
+							if (dropPosition == 'after'){
+								var newIdx = lOverIdx;
+							} else {
+								var newIdx = lOverIdx;
+							}
+							var nuovoIdx = lDropedIdx - lOver
+							//~ console.log(map.getLayerIndex(lDroped)+" vs "+map.getLayerIndex(lOver)+" nuovoidx "+newIdx)
+
+							map.setLayerIndex(lDroped,newIdx)
+
+						}
+					}
+				}
 			})
 		}
 		this.items = mappanel

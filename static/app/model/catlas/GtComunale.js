@@ -5,10 +5,10 @@
  * Time: 12:26 PM
  * To change this template use File | Settings | File Templates.
  */
-Ext.define('Webgis.model.catlas.GtAnnoRt', {
+Ext.define('Webgis.model.catlas.GtComunale', {
     extend: 'Ext.data.Model',
     fields: [
-        {name: 'id', type: 'int'},
-        {name: 'name',type: 'int'}
+        {name: 'id', type: 'string'},
+        {name: 'label',type: 'string'}
     ]
 });

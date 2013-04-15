@@ -7,10 +7,9 @@
  */
 Ext.define('Webgis.view.catlas.gtclause.AnnoRt', {
     extend: 'Ext.form.FieldContainer',
-    alias : 'widget.gtclauseannort',
+    alias : 'widget.gt_date_range',
 
     border: false,
-//    style: 'background-color: #FFFFFF',
 
     labelAlign: "top",
     fieldLabel: 'Seleziona l\'anno di inizio e fine serie',
@@ -56,30 +55,37 @@ Ext.define('Webgis.view.catlas.gtclause.AnnoRt', {
             checkdataText: 'La data di inizio deve essere minore della data di fine.'
         });
 
+        var st = Ext.create('Webgis.store.catlas.GtAnnoRt',{
+            data: this.values
+        });
+        var st1 = Ext.create('Webgis.store.catlas.GtAnnoRt',{
+            data: this.values
+        });
+
         this.items = [{
             xtype: 'combobox',
-            store: this.storeStart,
+            store: st,
             queryMode: 'local',
             typeAhead: true,
             forceSelection: true,
-            displayField: 'label',
+            displayField: 'name',
             valueField: 'id',
             vtype: 'checkdata',
-            name: 'gtannortstart',
+            name: this.baseName + "_" + this.suffixes[0],
             margin: '0 5 0 0',
             id: 'gtannortstart',
             allowBlank: false,
             endDateField: "gtannortend"
         },{
             xtype: 'combobox',
-            store: this.storeEnd,
+            store: st1,
             queryMode: 'local',
             typeAhead: true,
             forceSelection: true,
-            displayField: 'label',
+            displayField: 'name',
             valueField: 'id',
             vtype: 'checkdata',
-            name: 'gtannortend',
+            name: this.baseName + "_" + this.suffixes[1],
             id: 'gtannortend',
             allowBlank: false,
             startDateField: "gtannortstart"

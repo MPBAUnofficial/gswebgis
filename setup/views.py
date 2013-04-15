@@ -51,7 +51,12 @@ def f_search(request):
 
     return [obj.to_dict() for obj in result]
 
-
+@login_required
+def test(request):
+    print request.POST
+    print request.POST['sex']
+    print type(request.POST['sex'])
+    return HttpResponse("{'success':true}")
 #
 #
 # PROXY_FORMAT = u'%s%%s' % (settings.SKI_WMS_PROXY_DEST)

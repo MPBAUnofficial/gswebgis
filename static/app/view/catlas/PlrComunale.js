@@ -6,9 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 
-Ext.define('Webgis.view.catlas.PlrPercentuale', {
+Ext.define('Webgis.view.catlas.PlrComunale', {
     extend: 'Ext.form.Panel',
-    alias: 'widget.plrpercentuali',
+    alias: 'widget.plrcomunali',
 
     border: false,
     frame: true,
@@ -43,20 +43,44 @@ Ext.define('Webgis.view.catlas.PlrPercentuale', {
             margin: '0 0 15 0',
             value: 'Descrizione del tipo di grafico... bla bla bla'
         },{
-            fieldLabel: 'Ambito territoriale',
-            xtype: 'combobox',
-            store: Ext.create('Ext.data.Store', {
-                fields: ['id', 'label'],
-                data: [
-                    {"id": 1, "label": "Provincia"},
-                ]
-            }),
-            labelAlign: "top",
-            queryMode: 'local',
-            displayField: 'label',
-            valueField: 'id',
-            name: 'ambito',
-            allowBlank: false
+            xtype: 'grid',
+            hideHeaders: true,
+            columns: [
+                { text: 'Label',  dataIndex: 'label', flex: 1 }
+            ],
+            store: Ext.create('Webgis.store.catlas.GtComunale'),
+            selModel: Ext.create('Ext.selection.CheckboxModel'),
+            height: 200,
+            autoScroll: true,
+            columnLines: true,
+            listeners: {
+                selectionchange: function(sm,rec,index){
+                    var display = this.up("form").down("displayfield[name=label_comu]");
+                    var hidden = this.up("form").down("textfield[name=comu]");
+                    var idc = new Array();
+                    var label = new Array();
+
+                    Ext.Array.each(rec,function(item,idex,allItems){
+                        idc.push(item.get("id"));
+                        label.push(item.get("label"));
+                    }, this);
+
+                    hidden.setValue(idc.join(','));
+                    display.update("Hai selezionato: "+label.join(','));
+                }
+            }
+        },{
+            xtype: 'displayfield',
+            hideLabel: true,
+            margin: '5 0 0 0',
+            name: 'label_comu',
+            value: 'Nessuna sede selezionata'
+        },{
+            xtype: 'textfield',
+            hidden: true,
+            name: 'comu',
+            allowBlank: false,
+            value: null
         },{
             fieldLabel: 'Anno di inizio incidenza',
             xtype: 'combobox',
@@ -78,10 +102,10 @@ Ext.define('Webgis.view.catlas.PlrPercentuale', {
             displayField: 'label',
             valueField: 'id',
             vtype: 'daterange',
-            name: 'annoinizio2',
-            id: 'annoinizio2',
+            name: 'annoinizio3',
+            id: 'annoinizio3',
             allowBlank: false,
-            endDateField: "annofine2"
+            endDateField: "annofine3"
         },
         {
             fieldLabel: 'Anno di fine incidenza',
@@ -103,11 +127,11 @@ Ext.define('Webgis.view.catlas.PlrPercentuale', {
             queryMode: 'local',
             displayField: 'label',
             valueField: 'id',
-            name: 'annofine2',
-            id: 'annofine2',
+            name: 'annofine3',
+            id: 'annofine3',
             vtype: 'daterange',
             allowBlank: false,
-            startDateField: "annoinizio2"
+            startDateField: "annoinizio3"
         },
         {
             fieldLabel: 'Sede',
@@ -192,7 +216,7 @@ Ext.define('Webgis.view.catlas.PlrPercentuale', {
                     var chartH = Ext.util.Format.round(windowH * 0.8, 0);
                     var chartW = Ext.util.Format.round((chartH * w) / h, 0);
 
-                    var url = Ext.String.format('/plr/execute/ca_graph_perc/{0}/{1}/{2}/{3}/{4}/{5}/{6}/{7}/{8}/{9}', 4, values.ambito, 8, 7, 1, chartW - 10, chartH - 30, values.annoinizio2, values.annofine2, values.sede);
+                    var url = Ext.String.format('/plr/execute/ca_graph_comu/{0}/{1}/{2}/{3}/{4}/{5}/{6}/{7}/{8}', 4, values.comu, 8, 7, chartW - 10, chartH - 30, values.annoinizio3, values.annofine3, values.sede);
 
 
 
@@ -220,7 +244,7 @@ Ext.define('Webgis.view.catlas.PlrPercentuale', {
         {
             xtype: 'container',
             dock: 'top',
-            html: 'Distribuzioni percentuali incidenza',
+            html: 'Tassi grezzi x comune',
             border: false,
             baseCls: 'x-maplegend-title'
         }

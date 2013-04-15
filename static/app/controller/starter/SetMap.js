@@ -57,7 +57,16 @@ Ext.define('Webgis.controller.starter.SetMap', {
                 var l = new OpenLayers.Layer.WMS(
                     larray.join(','), layer.fields.geoserver_url,
                     {layers: larray.join(','), format: 'image/png' },
-                    { tileSize: new OpenLayers.Size(256, 256), displayInLayerSwitcher: layer.fields.display_in_layer_switcher}
+
+//                    {
+//                        tileSize: new OpenLayers.Size(256, 256),
+//                        displayInLayerSwitcher: layer.fields.display_in_layer_switcher
+//                    }
+                    {
+                        singleTile: true,
+                        transitionEffect: 'resize',
+                        displayInLayerSwitcher: false
+                    }
                 );
 
 				//Aggiungo l'oggetto layer alla corrispettiva mappa

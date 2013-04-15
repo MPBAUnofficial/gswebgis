@@ -7,7 +7,7 @@
  */
 Ext.define('Webgis.view.catlas.gtclause.Sede', {
     extend: 'Ext.form.FieldContainer',
-    alias : 'widget.gtwhereclausesede',
+    alias : 'widget.gt_tumor_site',
 
     border: false,
 
@@ -18,16 +18,19 @@ Ext.define('Webgis.view.catlas.gtclause.Sede', {
     msgTarget : 'side',
 
     initComponent: function() {
-
         var sm = Ext.create('Ext.selection.CheckboxModel');
+
+        var stSedeSelected = Ext.create('Webgis.store.catlas.GtSede',{
+            data: this.values
+        });
 
         this.items = [{
             xtype: 'grid',
             hideHeaders: true,
             columns: [
-                { text: 'Label',  dataIndex: 'label', flex: 1 }
+                { text: 'Nome',  dataIndex: 'name', flex: 1 }
             ],
-            store: this.selectedStore,
+            store: stSedeSelected,
             selModel: sm,
             height: 250,
             autoScroll: true,
@@ -39,10 +42,9 @@ Ext.define('Webgis.view.catlas.gtclause.Sede', {
             name: 'label_sede',
             value: 'Nessuna sede selezionata'
         },{
-//            xtype: 'hiddenfield',
             xtype: 'textfield',
             hidden: true,
-            name: 'sedi',
+            name: this.baseName + "_" + this.suffixes,
             allowBlank: false,
             value: null
         }]

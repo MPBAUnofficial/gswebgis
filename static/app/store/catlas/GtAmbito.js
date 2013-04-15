@@ -5,10 +5,10 @@
  * Time: 12:24 PM
  * To change this template use File | Settings | File Templates.
  */
-Ext.define('Webgis.store.catlas.GtClassiEta', {
+Ext.define('Webgis.store.catlas.GtAmbito', {
     extend: 'Ext.data.Store',
 
-    model: 'Webgis.model.catlas.GtClassiEta',
+    model: 'Webgis.model.catlas.GtAmbito',
 
     autoLoad: true,
 
@@ -17,5 +17,12 @@ Ext.define('Webgis.store.catlas.GtClassiEta', {
         reader: {
             type: 'json'
         }
-    }
+    },
+
+    sorters: [
+        {
+            property : 'name',
+            direction: 'ASC'
+        }
+    ]
 });

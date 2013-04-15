@@ -6,4 +6,5 @@ urlpatterns = patterns('gswebgis.setup.views',
     url(r'^interface/(?P<webgis_id>\d+)', 'interface'),
     # url(r'^proxy/', 'proxy'),
     url(r'^f_search/','f_search'),
+    url(r'^test/','test'),
 )

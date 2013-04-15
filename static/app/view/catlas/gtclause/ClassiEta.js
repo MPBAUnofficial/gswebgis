@@ -7,7 +7,7 @@
  */
 Ext.define('Webgis.view.catlas.gtclause.ClassiEta', {
     extend: 'Ext.form.FieldContainer',
-    alias : 'widget.gtclauseclassieta',
+    alias : 'widget.gt_age_class',
 
     border: false,
 //    style: 'background-color: #FFFFFF',
@@ -56,14 +56,21 @@ Ext.define('Webgis.view.catlas.gtclause.ClassiEta', {
             checkdataText: 'La data di inizio deve essere minore della data di fine.'
         });
 
+        var storeStart = Ext.create('Webgis.store.catlas.GtClassiEta',{
+            data: this.values
+        });
+        var storeEnd = Ext.create('Webgis.store.catlas.GtClassiEta',{
+            data: this.values
+        });
+
         this.items = [{
             xtype: 'combobox',
-            store: this.storeStart,
+            store: storeStart,
             queryMode: 'local',
-            displayField: 'label',
+            displayField: 'name',
             valueField: 'id',
             vtype: 'checkdata',
-            name: 'gtclassietastart',
+            name: this.baseName + "_" + this.suffixes[0],
             margin: '0 5 0 0',
             id: 'gtclassietastart',
             allowBlank: false,
@@ -72,12 +79,12 @@ Ext.define('Webgis.view.catlas.gtclause.ClassiEta', {
             endDateField: "gtclassietatend"
         },{
             xtype: 'combobox',
-            store: this.storeEnd,
+            store: storeEnd,
             queryMode: 'local',
-            displayField: 'label',
+            displayField: 'name',
             valueField: 'id',
             vtype: 'checkdata',
-            name: 'gtclassietatend',
+            name: this.baseName + "_" + this.suffixes[1],
             id: 'gtclassietatend',
             allowBlank: false,
             typeAhead: true,

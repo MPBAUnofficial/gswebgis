@@ -12,21 +12,19 @@ Ext.define('Webgis.store.catlas.GtAnnoRt', {
 
     autoLoad: true,
 
-//    proxy: {
-//        type: 'ajax',
-//        url: '/api/layer/',
-//        reader: {
-//            type: 'json',
-//            root: 'styles'
-//        }
-//    },
+
 
     proxy: {
         type: 'memory',
         reader: {
-            type: 'array'
+            type: 'json'
         }
     },
 
-    data: [[1, '1999'],[2, '2000']]
+    sorters: [
+        {
+            property : 'name',
+            direction: 'ASC'
+        }
+    ]
 });

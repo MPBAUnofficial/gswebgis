@@ -46,6 +46,36 @@ Ext.define('Webgis.view.function.LayerSwitcher', {
 
     margin: '0 0 5 0',
 
+
+    viewConfig: {
+        plugins: {
+            ptype: 'gridviewdragdrop',
+            dragGroup: 'GridDDGroup0',
+            dropGroup: 'GridDDGroup0'
+        },
+        listeners: {
+            drop: function(element, dataObj, overModel, dropPosition) {
+                var map = Webgis.maps[0]
+
+                var lDroped = map.getLayersBy('id',dataObj.records[0].getId())[0]
+                var lOver = map.getLayersBy('id',overModel.getId())[0]
+
+                var lDropedIdx = map.getLayerIndex(lDroped);
+                var lOverIdx = map.getLayerIndex(lOver);
+                if (dropPosition == 'after'){
+                    var newIdx = lOverIdx;
+                } else {
+                    var newIdx = lOverIdx;
+                }
+                var nuovoIdx = lDropedIdx - lOver
+
+                map.setLayerIndex(lDroped,newIdx)
+
+            }
+        }
+    },
+
+
     initComponent: function () {
         //~ //Setto le colonne da vedere nella griglia
         this.columns = [

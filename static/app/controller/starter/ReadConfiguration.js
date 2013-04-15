@@ -49,8 +49,8 @@ Ext.define('Webgis.controller.starter.ReadConfiguration', {
 //                    Webgis.config.TOPONIMI_LAYER_NAME = 'inail:toponimi';
                     Webgis.config.GEODOCS_URL = '/geoserver/wfs?';
                     Webgis.config.GEODOCS_URL_PREVIEW = 'https://inail.fbk.eu/geoserver/wms?';
-                    Webgis.config.TOPONIMI_URL = 'https://inail.fbk.eu/geoserver/wms?';
-                    Webgis.config.TOPONIMI_LAYER_NAME = 'inail:toponimi';
+                    Webgis.config.TOPONIMI_URL = 'https://enviro.fbk.eu/geoserver/land/wms?';
+                    Webgis.config.TOPONIMI_LAYER_NAME = 'mpba:top010ent';
 				break;
 				case 'setup.contextualinfo':
 					//ristrutturo meglio l'oggetto informazioni per comodita di utilizzo nell Ext.XTemplate
