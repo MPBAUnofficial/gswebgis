@@ -13,8 +13,8 @@ Ext.define('Webgis.model.catlas.GtCachedLayer', {
         {name: 'gs_url',type: 'string'},
         {name: 'gs_layer',type: 'string'},
         {name: 'gs_workspace',type: 'string'},
-        {name: 'timestamp',type: 'date', dateReaderFormat: 'c', dateWriteFormat: 'j F Y f:i:s'},
-        {name: 'indicator_desc',type: 'string'},
+        {name: 'timestamp',type: 'date', dateReaderFormat: 'c', dateWriteFormat: 'j F d Y f:i:s'},
+        {name: 'gs_layer_name',type: 'string'},
         {name: 'quantile', type: Ext.data.Types.MONOARRAY}
     ]
 });

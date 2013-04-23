@@ -10,7 +10,8 @@ Ext.define('Webgis.controller.MapToolbar', {
         'toolbar.NavPrevious',
         'toolbar.NavNext',
         'toolbar.GetMousePosition',
-        'toolbar.GetLocation'
+        'toolbar.GetLocation',
+        'toolbar.GetFeatureInfo'
     ],
 
     refs: [
@@ -77,6 +78,12 @@ Ext.define('Webgis.controller.MapToolbar', {
                     scope: this
                 }
             },
+            'getfeatureinfo':{
+                'toggle': {
+                    fn: this.onGetFeatureInfo,
+                    scope: this
+                }
+            },
             'getlocation':{
                 'toggle': {
                     fn: this.onGetLocation,
@@ -103,6 +110,10 @@ Ext.define('Webgis.controller.MapToolbar', {
         var getMouse = new Webgis.view.toolbar.GetMousePosition({
             olMap: Webgis.maps[0],
             fn: this.updateInfoPanel
+        });
+        var getFeatureInfo = new Webgis.view.toolbar.GetFeatureInfo({
+            olMap: Webgis.maps[0],
+            fn: this.updateGetFeatureInfoPanel
         });
         var getLocation = new Webgis.view.toolbar.GetLocation({
             olMap: Webgis.maps[0],
@@ -136,7 +147,8 @@ Ext.define('Webgis.controller.MapToolbar', {
                 navPrevious,
                 navNext,
                 getMouse,
-                getLocation
+                getLocation,
+                getFeatureInfo
             ]
         });
 
@@ -175,9 +187,24 @@ Ext.define('Webgis.controller.MapToolbar', {
         }
 
     },
+    onGetFeatureInfo: function(btn,pressed) {
+        if (pressed) {
+            var tbXY = this.getToolbar().getPosition()
+            btn.control.activate();
+            btn.infopanel.setPosition(tbXY[0] + 5,tbXY[1] + this.getToolbar().getHeight());
+            btn.infopanel.setVisible(true)
+
+            //imposto marker layer
+            btn.olMap.addLayer(btn.markerslayer);
+        } else {
+            btn.infopanel.setVisible(false);
+            btn.olMap.removeLayer(btn.markerslayer);
+            btn.control.deactivate();
+        }
+    },
     updateInfoPanel: function(e){
         var latlon = this.handlerOptions.ref.olMap.getLonLatFromPixel(e.xy);
-        var latlon4326 = latlon.clone().transform("EPSG:32632","EPSG:4326")
+        var latlon4326 = latlon.clone().transform("EPSG:32632","EPSG:4326");
         var result = {
             lat: latlon.lat,
             lon: latlon.lon,
@@ -185,13 +212,63 @@ Ext.define('Webgis.controller.MapToolbar', {
             lonPrj: latlon4326.lon
 
         }
-        this.handlerOptions.ref.markerslayer.addMarker(new OpenLayers.Marker(latlon, this.handlerOptions.ref.icon))
+        this.handlerOptions.ref.markerslayer.addMarker(new OpenLayers.Marker(latlon, this.handlerOptions.ref.icon));
 
         var tpl = new Ext.Template(
             '<p>Your are clicked near: </p>',
             '<p>{lat}, {lon} - <a target="_blank" href="https://maps.google.it/maps?q={latPrj},+{lonPrj}&hl=it&sll=46.070807,11.127759&sspn=0.180307,0.445976&t=m&z=16">view in gmaps</a></p>'
-        )
+        );
         tpl.overwrite(this.handlerOptions.ref.infopanel.id,result);
+    },
+    updateGetFeatureInfoPanel: function(e){
+        var map = Webgis.maps[0];
+        var layers = map.getLayersBy('isIndicator',true);
+        var layers_name = new Array();
+
+        //Creao un array con i nomi di tutti i layer di tipo indicatore
+        Ext.Array.each(layers,function(el){
+            layers_name.push(el.params.LAYERS);
+        });
+
+        //WMS GetFeatureInfo params
+        var params = {
+            REQUEST: "GetFeatureInfo",
+            VERSION: "1.1.1",
+            EXCEPTIONS: "application/vnd.ogc.se_xml",
+            BBOX: map.getExtent().toBBOX(),
+            X:parseInt(e.xy.x),
+            Y:parseInt(e.xy.y),
+            SERVICE: "WMS",
+            INFO_FORMAT: 'text/html',
+            QUERY_LAYERS: layers_name.join(','),
+            FEATURE_COUNT: 50,
+            LAYERS: layers_name.join(','),
+            STYLES: "polygon",
+            WIDTH: map.size.w,
+            HEIGHT: map.size.h
+        };
+
+        Ext.Ajax.request({
+            url: layers[0].url, //Mi aspetto che la sorgente dei layer indicatori sia sempre la stessa per tutti
+            params: params,
+            method: 'GET',
+            disableCachingParam: true,
+            success: function(response, opts) {
+                console.dir(response);
+                var tpl = new Ext.Template(
+                    '<div>',
+                    '{responseText}',
+                    '</div>'
+                )
+                tpl.overwrite(this.handlerOptions.ref.infopanel.id,response);
+            },
+            failure: function(response, opts) {
+                console.log('server-side failure with status code ' + response.status);
+            }
+        });
+
+        var latlon = this.handlerOptions.ref.olMap.getLonLatFromPixel(e.xy);
+        this.handlerOptions.ref.markerslayer.addMarker(new OpenLayers.Marker(latlon, this.handlerOptions.ref.icon));
 
     },
     onGetLocation: function(btn,pressed){

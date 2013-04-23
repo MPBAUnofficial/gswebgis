@@ -43,6 +43,7 @@ Ext.define('Webgis.controller.catlas.GtCatalogIndicators', {
         'Webgis.view.catlas.gtclause.ClassiEta',
         'Webgis.view.catlas.gtclause.Sede',
         'Webgis.view.catlas.gtclause.Ambito',
+        'Webgis.view.catlas.gtclause.PopolazioneStd',
         'Webgis.types.JsonObject',
         'Webgis.types.Array',
         'Ext.form.field.ComboBox'
@@ -167,6 +168,8 @@ Ext.define('Webgis.controller.catlas.GtCatalogIndicators', {
             form.submit({
                 url: '/api/indicator/run/' + indicatorId + "/",
                 scope: this,
+                // 5 minutes
+                timeout: 5 * 60 * 1000,
 //                waitMsg: 'Elaborazione dati in corso...',
                 success: function (fp, o) {
                     p.unmask();
@@ -188,16 +191,14 @@ Ext.define('Webgis.controller.catlas.GtCatalogIndicators', {
         return rec;
     },
     addLayerToMap: function(rec){
-//        //Inserisco un nuovo record nello store della cache
         var map = Webgis.maps[0];
 
         //Var locale con il label e il codice del layer
-        var layer_label = "Prova";
         var layer_name = rec.get("gs_workspace") + ':' + rec.get("gs_layer");
         var layer_hash = rec.get("hash");
         var layer_url = rec.get("gs_url");
         var quantile = rec.get("quantile");
-        var indicator_desc = rec.get("indicator_desc");
+        var indicator_desc = rec.get("gs_layer_name");
 
 
         //Setting dei parametri per il WMS GetMap
@@ -245,8 +246,9 @@ Ext.define('Webgis.controller.catlas.GtCatalogIndicators', {
             isBaseLayer: false,
             displayInLayerSwitcher: true,
             visibility: true,
+            isIndicator: true,
             projection: map.projection,
-            legendURL: 'http://localhost:8000/plr/execute/ca_legend_plr/239/400/'+cString.join(',')+'/'+qString.join(','),
+            legendURL: 'http://localhost:8000/plr/legend/250/250/'+cString.join(',')+'/'+qString.join(','),
             opacity: 1
             //~ buffer: layer.fields.buffer,
             //~ tileSize: new OpenLayers.Size(layer.fields.tile_size,layer.fields.tile_size)
@@ -261,70 +263,47 @@ Ext.define('Webgis.controller.catlas.GtCatalogIndicators', {
         //Aggiungo l'oggetto layer alla corrispettiva mappa
         map.addLayer(l);
 
-//        var palette = new array(
-//            "#ffffff",
-//            "#bae4bc",
-//            "#7bccc4",
-//            "#43a2ca",
-//            "#0868ac"
-//        )
-//        var q1 = new OpenLayers.Rule({
-//            name: 'Poco importante',
-//            filter: new OpenLayers.Filter.Comparison({
-//                type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                property: "degree",
-//                value: data.
-//            }),
-//            symbolizer: {pointRadius: 6, fillColor: "#2B83BA", fillOpacity: 0.7, strokeColor: "black"}
-//        });
-//        var q2 = new OpenLayers.Rule({
-//            name: 'Mediamente importante',
-//            filter: new OpenLayers.Filter.Comparison({
-//                type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                property: "degree",
-//                value: 2
-//            }),
-//            symbolizer: {pointRadius:6, fillColor: "#ABDDA4", fillOpacity: 0.7, strokeColor: "black"}
-//        });
-//        var q3 = new OpenLayers.Rule({
-//            name: 'Importante',
-//            filter: new OpenLayers.Filter.Comparison({
-//                type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                property: "degree",
-//                value: 3
-//            }),
-//            symbolizer: {pointRadius: 6, fillColor: "#FFFFBF", fillOpacity: 0.7, strokeColor: "black"}
-//        });
-//        var q4 = new OpenLayers.Rule({
-//            name: 'Molto importante',
-//            filter: new OpenLayers.Filter.Comparison({
-//                type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                property: "degree",
-//                value: 4
-//            }),
-//            symbolizer: {pointRadius: 6, fillColor: "#FDAE61", fillOpacity: 0.7, strokeColor: "black"}
-//        });
-//        var q5 = new OpenLayers.Rule({
-//            name: 'Estremamente importante',
-//            filter: new OpenLayers.Filter.Comparison({
-//                type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                property: "degree",
-//                value: 5
-//            }),
-//            symbolizer: {pointRadius: 6, fillColor: "#D7191C", fillOpacity: 0.7, strokeColor: "black"}
-//        });
-//        var q5 = new OpenLayers.Rule({
-//            name: 'Estremamente importante',
-//            filter: new OpenLayers.Filter.Comparison({
-//                type: OpenLayers.Filter.Comparison.EQUAL_TO,
-//                property: "degree",
-//                value: 5
-//            }),
-//            symbolizer: {pointRadius: 6, fillColor: "#D7191C", fillOpacity: 0.7, strokeColor: "black"}
-//        });
-//        var q6 = new OpenLayers.Rule({
-//            name: 'Selezionato',
-//            symbolizer: {pointRadius: 6, fillColor: "black", fillOpacity: 0.7, strokeColor: "black"}
-//        });
+    },
+    downloadShpFile: function(rec){
+        //estraggo dal record i dati che mi servono
+        var layer_name = rec.get("gs_workspace") + ':' + rec.get("gs_layer");
+        var layer_hash = rec.get("hash");
+
+        //set url e query string per aprire il popup
+        var layer_url = rec.get("gs_url");
+        var query_str = Ext.Object.toQueryString({
+            "service" : 'WFS',
+            "version" : '1.0.0',
+            "VIEWPARAMS" : 'hash:' + layer_hash,
+            "request" : 'GetFeature',
+            "typeName" : layer_name,
+            "maxFeatures" : 250,
+            "outputFormat" : 'SHAPE-ZIP'
+        });
+
+        //Apro il popup
+        var url = Ext.String.format('{0}{1}',layer_url,query_str);
+        window.open(url);
+    },
+    downloadCsv: function(rec){
+        //estraggo dal record i dati che mi servono
+        var layer_name = rec.get("gs_workspace") + ':' + rec.get("gs_layer");
+        var layer_hash = rec.get("hash");
+
+        //set url e query string per aprire il popup
+        var layer_url = rec.get("gs_url");
+        var query_str = Ext.Object.toQueryString({
+            "service" : 'WFS',
+            "version" : '1.0.0',
+            "VIEWPARAMS" : 'hash:' + layer_hash,
+            "request" : 'GetFeature',
+            "typeName" : layer_name,
+            "maxFeatures" : 250,
+            "outputFormat" : 'csv'
+        });
+
+        //Apro il popup
+        var url = Ext.String.format('{0}{1}',layer_url,query_str);
+        window.open(url);
     }
 });

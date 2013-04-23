@@ -37,7 +37,7 @@ Ext.define('Webgis.view.catlas.GtCachePanelIndicator', {
     initComponent: function () {
         var tpl =  new Ext.XTemplate(
             '<div style="white-space: normal;">',
-            '<p>{indicator_desc}</p>',
+            '<p>{gs_layer_name}</p>',
             '<p><i>Estrazione effettuata {timestamp}</i></p>',
             '</div>'
         );
@@ -48,7 +48,10 @@ Ext.define('Webgis.view.catlas.GtCachePanelIndicator', {
             {text: 'Layer name', flex: 1, dataIndex: 'indicator_desc', xtype: 'templatecolumn', tpl: tpl},
             {
                 xtype: 'actioncolumn',
-                width: 25,
+                width: 26,
+                tdCls: 'gt-cache-td-actioncolumn',
+                baseCls: 'gt-cache',
+                iconCls: 'gt-cache-img-actioncolumn',
                 items: [
                     {
                         icon: '/static/resources/images/addmap.png',
@@ -59,12 +62,7 @@ Ext.define('Webgis.view.catlas.GtCachePanelIndicator', {
                             var record = grid.getStore().getAt(rowIndex);
                             this.addLayerToMap(record);
                         }
-                    }
-                ]
-            },{
-                xtype: 'actioncolumn',
-                width: 25,
-                items: [
+                    },
                     {
                         icon: '/static/resources/images/download.png',
                         tooltip: 'Esporta mappa',
@@ -72,7 +70,17 @@ Ext.define('Webgis.view.catlas.GtCachePanelIndicator', {
                         scope: this.controllerScope,
                         handler: function (grid, rowIndex, colIndex) {
                             var record = grid.getStore().getAt(rowIndex);
-                            this.addLayerToMap(record);
+                            this.downloadShpFile(record);
+                        }
+                    },
+                    {
+                        icon: '/static/resources/images/csv.png',
+                        tooltip: 'Esporta CSV',
+                        name: 'gridfunction',
+                        scope: this.controllerScope,
+                        handler: function (grid, rowIndex, colIndex) {
+                            var record = grid.getStore().getAt(rowIndex);
+                            this.downloadCsv(record);
                         }
                     }
                 ]

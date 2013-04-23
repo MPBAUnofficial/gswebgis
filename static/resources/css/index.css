@@ -394,6 +394,10 @@ div.x-baseinterface-north-title img {
     background-image: url("../images/icons/getlocation25.png") !important;
 
 }
+.x-toolbar-getfeatureinfo {
+    background-image: url("../images/icons/info.png") !important;
+
+}
 .x-button-maptoolbar {
     width: 32px !important;
     height: 32px  !important;
@@ -663,4 +667,13 @@ div.x-baseinterface-north-title img {
     font-variant: small-caps;
     color: #0033CC !important;
 }
-
+.gt-cache-td-actioncolumn{
+    white-space: normal !important;
+}
+.gt-cache-img-actioncolumn {
+    max-height: 20px !important;
+    margin-bottom: 2px;
+}
+.gt-cache-td-actioncolumn .x-grid-cell-inner{
+    white-space: normal !important;
+}

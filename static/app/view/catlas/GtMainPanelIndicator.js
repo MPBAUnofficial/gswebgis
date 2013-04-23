@@ -28,17 +28,9 @@ Ext.define('Webgis.view.catlas.GtMainPanelIndicator', {
 
 
     initComponent: function() {
-        //Template per visualizzare le informazioni introduttive
 
         this.items = [
                 {
-//                    dockedItems: [{
-//                        xtype: 'container',
-//                        dock: 'top',
-//                        html: 'Configura indicatore',
-//                        border: false,
-//                        baseCls: 'x-maplegend-title'
-//                    }],
                     title: 'Configura indicatore',
                     layout: 'card',
                     border: false,
@@ -52,14 +44,6 @@ Ext.define('Webgis.view.catlas.GtMainPanelIndicator', {
                         store: this.store
                     }]
                 },
-//                {
-//                    title: 'Mappe in sessione',
-//                    layout:
-//                    items: [{
-//                        xtype: 'gttreepanelindicator',
-//                        controllerScope: this.controllerScope
-//                    }]
-//                }
                 {
                     xtype: 'gtcachepanelindicator',
                     store: this.cacheStore,
