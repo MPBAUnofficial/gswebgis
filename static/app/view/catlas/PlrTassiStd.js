@@ -64,6 +64,8 @@ Ext.define('Webgis.view.catlas.PlrTassiStd', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['id', 'label'],
                 data: [
+                    {"id": 1997, "label": "1997"},
+                    {"id": 1998, "label": "1998"},
                     {"id": 1999, "label": "1999"},
                     {"id": 2000, "label": "2000"},
                     {"id": 2001, "label": "2001"},
@@ -90,6 +92,8 @@ Ext.define('Webgis.view.catlas.PlrTassiStd', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['id', 'label'],
                 data: [
+                    {"id": 1997, "label": "1997"},
+                    {"id": 1998, "label": "1998"},
                     {"id": 1999, "label": "1999"},
                     {"id": 2000, "label": "2000"},
                     {"id": 2001, "label": "2001"},
