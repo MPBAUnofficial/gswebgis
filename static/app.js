@@ -44,7 +44,7 @@ Ext.application({
 //        'wps.WpsEngine',
         'function.FuzzySearch',
         'function.LegendPanelAlwaysVisible',
-//        'Solar',
+        'Solar',
         'catlas.GtCatalogIndicators',
         'starter.Done'
         //'CaInterface'

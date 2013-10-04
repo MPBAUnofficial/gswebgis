@@ -108,7 +108,7 @@ Ext.define('Webgis.controller.starter.SetMap', {
                     })
 				]
 			}
-			
+
 			var m = new OpenLayers.Map(properties);
 			Webgis.maps.push(m);
 		});
