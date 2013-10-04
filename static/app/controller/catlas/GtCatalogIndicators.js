@@ -248,7 +248,7 @@ Ext.define('Webgis.controller.catlas.GtCatalogIndicators', {
             visibility: true,
             isIndicator: true,
             projection: map.projection,
-            legendURL: 'http://localhost:8000/plr/legend/250/250/'+cString.join(',')+'/'+qString.join(','),
+            legendURL: '/plr/legend/250/250/'+cString.join(',')+'/'+qString.join(','),
             opacity: 1
             //~ buffer: layer.fields.buffer,
             //~ tileSize: new OpenLayers.Size(layer.fields.tile_size,layer.fields.tile_size)
