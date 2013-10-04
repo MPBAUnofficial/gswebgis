@@ -49,7 +49,8 @@ Ext.define('Webgis.view.catlas.PlrTassiStd', {
                 data: [
                     {"id": 6, "label": "Distretti sanitari"},
                     {"id": 3, "label": "Comprensori"},
-                    {"id": 2, "label": "Cdv"}
+                    {"id": 2, "label": "Comunita' di Valle"},
+                    {"id": 9, "label": "Comuni Val di Non"}
                 ]
             }),
             labelAlign: "top",
@@ -64,8 +65,13 @@ Ext.define('Webgis.view.catlas.PlrTassiStd', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['id', 'label'],
                 data: [
+<<<<<<< HEAD
                     {"id": 1997, "label": "1997"},
                     {"id": 1998, "label": "1998"},
+=======
+                    {"id": 1997, "label": "1999"},
+                    {"id": 1998, "label": "1999"},
+>>>>>>> 54f10180665fb14e5ba30f7a9cd3df68a56a7516
                     {"id": 1999, "label": "1999"},
                     {"id": 2000, "label": "2000"},
                     {"id": 2001, "label": "2001"},
@@ -92,8 +98,13 @@ Ext.define('Webgis.view.catlas.PlrTassiStd', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['id', 'label'],
                 data: [
+<<<<<<< HEAD
                     {"id": 1997, "label": "1997"},
                     {"id": 1998, "label": "1998"},
+=======
+                    {"id": 1997, "label": "1999"},
+                    {"id": 1998, "label": "1999"},
+>>>>>>> 54f10180665fb14e5ba30f7a9cd3df68a56a7516
                     {"id": 1999, "label": "1999"},
                     {"id": 2000, "label": "2000"},
                     {"id": 2001, "label": "2001"},

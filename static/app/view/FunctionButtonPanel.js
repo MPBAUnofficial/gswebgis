@@ -2,7 +2,7 @@ Ext.define('Webgis.view.FunctionButtonPanel', {
     extend: 'Ext.container.Container',
     alias : 'widget.functionbtnpanel',
 
-        layout: {
+    layout: {
         type: 'table',
         // The total column count must be specified here
         columns: 2,
@@ -20,7 +20,7 @@ Ext.define('Webgis.view.FunctionButtonPanel', {
 
     defaults: {
         // applied to each contained panel
-        bodyStyle: 'padding:20px'
+        bodyStyle: 'padding: 20px'
     },
 
     id: 'webgiseastfn',

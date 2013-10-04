@@ -10,7 +10,7 @@ Ext.define('Webgis.view.function.GeoDocs', {
     title: 'Aggiungi una segnalazione',
 
     layout: 'anchor',
-    defaults: {
+    defaults: {git
         anchor: '95%'
     },
 

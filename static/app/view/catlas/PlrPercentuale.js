@@ -91,9 +91,15 @@ Ext.define('Webgis.view.catlas.PlrPercentuale', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['id', 'label'],
                 data: [
+<<<<<<< HEAD
                     {"id": 1997, "label": "1997"},
                     {"id": 1998, "label": "1998"},
+=======
+                    {"id": 1997, "label": "1999"},
+                    {"id": 1998, "label": "1999"},
+>>>>>>> 54f10180665fb14e5ba30f7a9cd3df68a56a7516
                     {"id": 1999, "label": "1999"},
+                    {"id": 2000, "label": "1999"},
                     {"id": 2000, "label": "2000"},
                     {"id": 2001, "label": "2001"},
                     {"id": 2002, "label": "2002"},

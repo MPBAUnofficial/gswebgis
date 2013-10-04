@@ -5,7 +5,7 @@ django >=1.4.1, <1.5
 django-cms==2.3.5
 
 # to_json
-git+https://github.com/davidek/django-tojson.git
+sour
 
 # httplib2 per proxy pass dev
 httplib2
